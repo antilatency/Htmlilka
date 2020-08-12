@@ -16,6 +16,16 @@ namespace Htmlilka {
                 return Children;
             }
         }
+
+        public override void WritePlaneText(StringBuilder stringBuilder) {
+            if (Children != null) {
+                if (RecursionCounter > 0) throw new Exception($"Recursion detected. Attempt to add <{Name}>");
+                RecursionCounter++;
+                foreach (var c in Children) c.WritePlaneText(stringBuilder);
+                RecursionCounter--;
+            }
+        }
+
         public override void WriteInternalHtml(StringBuilder stringBuilder) {
             if (Children != null) {
                 if (RecursionCounter > 0) throw new Exception($"Recursion detected. Attempt to add <{Name}>");

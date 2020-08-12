@@ -28,7 +28,12 @@ namespace Htmlilka {
         }
 
         public static T AddText<T>(this T x, string text) where T : Tag {
-            return Add<T, Text>(x, text);
+            return Add<T, TextNode>(x, text);
         }
+        public static T AddPureHtmlNode<T>(this T x, string text) where T : Tag {
+            return Add<T, PureHtmlNode>(x, text);
+        }
+        
+
     }
 }

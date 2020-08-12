@@ -17,6 +17,12 @@ namespace Htmlilka {
             WriteSuffix(stringBuilder);
         }
 
+        public string GetPlaneText() {
+            StringBuilder stringBuilder = new StringBuilder();
+            WritePlaneText(stringBuilder);
+            return stringBuilder.ToString();
+        }
+
         public virtual void WritePlaneText(StringBuilder stringBuilder) {
 
         }

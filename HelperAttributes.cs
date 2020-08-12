@@ -6,8 +6,8 @@ namespace Htmlilka {
             return x;
         }
 
-        public static T AddClass<T>(this T x, string value = null) where T : VoidTag {
-            x.ClassesNotNull.Add(value);
+        public static T AddClasses<T>(this T x, params string[] value) where T : VoidTag {
+            x.ClassesNotNull.AddRange(value);
             return x;
         }
     }
