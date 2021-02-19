@@ -53,5 +53,11 @@ namespace Htmlilka {
             WriteAttributes(stringBuilder);
             stringBuilder.Append('>');
         }
+
+        public override void WritePlaneText(StringBuilder stringBuilder) {
+            if (Name == "br")
+                stringBuilder.Append("\n");
+        }
+
     }
 }
